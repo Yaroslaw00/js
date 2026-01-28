@@ -2,15 +2,14 @@
 
 // Нумерація повинна починатися з 1. Наприклад, для першого елемента масиву ['Mango', 'Poly', 'Ajax'] з індексом 0 буде виведено '1 - Mango', а для індексу 2 виведе '3 - Ajax'.
 
-const students = ["firstStas", "secondStas", "Oleksiy", "Egor", "Yaroslav"];
-let a = "";
-for (let i = 0; i < students.length; i++) {
-  a += students[i];
-  if (i !== students.length - 1) {
-    a += ", ";
+function logItems(array) {
+  for (let i = 0; i < array.length; i++) {
+    console.log(i + 1 + "-" + array[i]);
   }
 }
-console.log(a);
+const massiv = logItems(["Mango", "Poly", "Ajax"]);
+
+// console.log(a);
 // const message = "Пусть каждый день приносит радость снова";
 // function changeString(message) {
 //   if (message.length > 30) {
