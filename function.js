@@ -85,14 +85,25 @@ console.log(Message);
 
 // 🔔 Робити перевірку того, що користувач ввів саме число, а не довільний набір символів, не обов'язково. Якщо хочеш, в разі некоректного введення, показуй alert з текстом 'Було введено не число, попробуйте ще раз', при цьому результат promptзаписувати в масив чисел не потрібно, після чого знову користувачеві пропонується ввести число в prompt.
 
-const input = prompt("Введіть число");
 const numbers = [];
 let Continue = true;
 while (Continue) {
-  numbers.push(input);
+  const input = prompt("Введіть число");
+
   if (input == null) {
     Continue = false;
     console.log(Continue);
   }
+  const number = Number(input);
+  if (Number.isNaN(number) || number === 0) {
+    alert("Ти ввів не число");
+    continue;
+  }
+  numbers.push(number);
+}
+let total = 0;
+for (let index = 0; index < numbers.length; index++) {
+  total += numbers[index];
 }
 console.log(numbers);
+console.log(total);
